@@ -1419,11 +1419,48 @@ flexdashboard::gauge(round((sum(y_hot$n_cases)/sum(y$n_cases))*100, digits = 1),
 # [**Hotspots del Vector**]{style="font-size:2pt"}
  
 ::: panel-tabset
+
 ### [**Cancún**]{style="color:#990000"}
 
 ```{r vector_hotspots_cancun, dpi = 300, warning=FALSE, message=FALSE}
 deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_23_quintana_roo,
                            locality = "Cancun",
+                           cve_edo = "23",
+                           palette = rcartocolor::carto_pal,
+                           name = "SunsetDark",
+                           static_map = FALSE)
+```
+
+
+### [**Chetumal**]{style="color:#990000"}
+
+```{r vector_hotspots_chetumal, dpi = 300, warning=FALSE, message=FALSE}
+deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_23_quintana_roo,
+                           locality = "Chetumal",
+                           cve_edo = "23",
+                           palette = rcartocolor::carto_pal,
+                           name = "SunsetDark",
+                           static_map = FALSE)
+```
+
+
+### [**Cozumel**]{style="color:#990000"}
+
+```{r vector_hotspots_cozumel, dpi = 300, warning=FALSE, message=FALSE}
+deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_23_quintana_roo,
+                           locality = "Cozumel",
+                           cve_edo = "23",
+                           palette = rcartocolor::carto_pal,
+                           name = "SunsetDark",
+                           static_map = FALSE)
+```
+
+
+### [**Playa del Carmen**]{style="color:#990000"}
+
+```{r vector_hotspots_playa, dpi = 300, warning=FALSE, message=FALSE}
+deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_23_quintana_roo,
+                           locality = "Playa del Carmen",
                            cve_edo = "23",
                            palette = rcartocolor::carto_pal,
                            name = "SunsetDark",
@@ -1438,7 +1475,7 @@ deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_23_quintana_roo,
  
 ::: panel-tabset
 
-### [**Cancun**]{style="color:#990000"}
+### [**Cancún**]{style="color:#990000"}
 
 ```{r risk_ageb_cancun}
 # Step 1. calculate the risk ####
@@ -1450,6 +1487,50 @@ denhotspots::risk_ageb(betas = denmex::eggs_betas_23_quintana_roo,
   denhotspots::map_risk(staticmap = FALSE)
 
 ```
+
+### [**Chetumal**]{style="color:#990000"}
+
+```{r risk_ageb_chetumal}
+# Step 1. calculate the risk ####
+denhotspots::risk_ageb(betas = denmex::eggs_betas_23_quintana_roo,
+                       hotspots = denmex::den_hotspots,
+                       intensity_perc = 25,
+                       locality = "Chetumal",
+                       cve_edo = "23") |>
+  denhotspots::map_risk(staticmap = FALSE)
+
+```
+
+
+### [**Cozumel**]{style="color:#990000"}
+
+```{r risk_ageb_cozumel}
+# Step 1. calculate the risk ####
+denhotspots::risk_ageb(betas = denmex::eggs_betas_23_quintana_roo,
+                       hotspots = denmex::den_hotspots,
+                       intensity_perc = 25,
+                       locality = "Cozumel",
+                       cve_edo = "23") |>
+  denhotspots::map_risk(staticmap = FALSE)
+
+```
+
+
+
+### [**Playa del Carmén**]{style="color:#990000"}
+
+```{r risk_ageb_playa}
+# Step 1. calculate the risk ####
+denhotspots::risk_ageb(betas = denmex::eggs_betas_23_quintana_roo,
+                       hotspots = denmex::den_hotspots,
+                       intensity_perc = 25,
+                       locality = "Playa del Carmen",
+                       cve_edo = "23") |>
+  denhotspots::map_risk(staticmap = FALSE)
+
+```
+
+
 :::
 
 
