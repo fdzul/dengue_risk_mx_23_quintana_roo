@@ -1,26 +1,32 @@
 ---
-title: "Untitled"
-format: html
-editor: visual
+title: "Programa de Prevención y Control del Dengue | 2025"
+format: 
+  dashboard:
+    nav-buttons: [twitter, github, facebook]
+theme: custom.scss
 ---
 
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
+```{r setup}
+library(sf)
+mapview::mapviewOptions(default = TRUE,
+                        basemaps.color.shuffle = FALSE)
 ```
 
-You can add options to executable code like this
+# [**Hotspots de la Transmisión de Dengue**]{style="font-size:2pt"}
+ 
+::: panel-tabset
+:::
 
-```{r}
-#| echo: false
-2 * 2
-```
+# [**Hotspots del Vector**]{style="font-size:2pt"}
+ 
+::: panel-tabset
+:::
 
-The `echo: false` option disables the printing of code (only output is displayed).
+
+# [**Escenarios Epidemiológicos**]{style="font-size:2pt"}
+ 
+::: panel-tabset
+:::
+
+
+
